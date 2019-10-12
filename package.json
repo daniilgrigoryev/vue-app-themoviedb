@@ -1,0 +1,19 @@
+{
+  "name": "movie-loader",
+  "version": "1.0.0",
+  "description": "VueJS test app provide a capability for get movies list from themoviedb API.",
+  "main": "index.js",
+  "author": "Daniil Grigoryev",
+  "license": "MIT",
+  "devDependencies": {
+    "@babel/preset-env": "^7.6.3",
+    "eslint": "^6.5.1",
+    "eslint-config-airbnb-base": "^14.0.0",
+    "eslint-config-prettier": "^6.4.0",
+    "eslint-plugin-import": "^2.18.2",
+    "eslint-plugin-prettier": "^3.1.1",
+    "eslint-plugin-vue": "^5.2.3",
+    "prettier": "^1.18.2"
+  },
+  "dependencies": {}
+}
