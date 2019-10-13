@@ -21,6 +21,17 @@
 
 ## Project setup
 
-```
+``` bash
+# install dependencies
 yarn install
+```
+
+``` bash
+# serve with hot reload
+yarn dev
+```
+
+``` bash
+# build project for production
+yarn build
 ```
