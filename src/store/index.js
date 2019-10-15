@@ -11,6 +11,7 @@ export const store = new Vuex.Store({
   mutations,
   state: {
     genres: [],
+    movies: [],
   },
   strict: true,
 })

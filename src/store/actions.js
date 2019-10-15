@@ -14,4 +14,11 @@ export default {
       }
     })
   },
+  GET_MOVIES({ commit }) {
+    axios.get(`${API_URL}movie/popular?api_key=${API_KEY}`).then(res => {
+      if (res.status === 200) {
+        commit("SET_MOVIES", res.data)
+      }
+    })
+  },
 }

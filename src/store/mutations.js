@@ -11,9 +11,9 @@ export default {
   // SET_TRAILER(state, trailer) {
   //   state.trailer = trailer.results
   // },
-  // SET_MOVIES(state, movies) {
-  //   state.movies = state.movies.concat(movies.results)
-  // },
+  SET_MOVIES(state, movies) {
+    state.movies = state.movies.concat(movies.results)
+  },
   // REMOVE_MOVIES(state, movies) {
   //   state.movies = []
   // },
