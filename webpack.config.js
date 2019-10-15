@@ -1,13 +1,14 @@
-const webpack = require("webpack")
 const HtmlWebpackPlugin = require("html-webpack-plugin")
 const { VueLoaderPlugin } = require("vue-loader")
+const Dotenv = require("dotenv-webpack")
+
 const path = require("path")
 const url = require("url")
 
 const publicPath = "/build/"
 
 module.exports = (options = {}) => ({
-  entry: "./src/index.js",
+  entry: "./src/main.js",
   mode: "none",
   output: {
     path: path.resolve(__dirname, "./build"),
@@ -61,7 +62,11 @@ module.exports = (options = {}) => ({
   optimization: {
     minimize: true,
   },
+  node: {
+    fs: "empty",
+  },
   plugins: [
+    new Dotenv(),
     new VueLoaderPlugin(),
     new HtmlWebpackPlugin({ template: "./src/index.html" }),
   ],

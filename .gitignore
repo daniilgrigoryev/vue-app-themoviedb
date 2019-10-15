@@ -41,12 +41,10 @@ pids
 yarn.lock
 package-lock.json
 
-
-
 # dotenv environment variables file
 .env
 .env.*
 
-
 # some else files
 records.md
+build/
