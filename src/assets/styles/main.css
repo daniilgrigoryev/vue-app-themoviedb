@@ -1,0 +1,13 @@
+body {
+  font-family: "Helvetica Neue";
+  background: #909399;
+}
+
+.wrapper {
+  max-width: 1024px;
+  margin: 0 auto;
+  padding: 0 5px;
+}
+#main {
+  margin-top: 60px;
+}

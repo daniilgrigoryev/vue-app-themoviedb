@@ -50,18 +50,18 @@ module.exports = (options = {}) => ({
     extensions: [".js", ".vue", ".json", ".css"],
   },
   devServer: {
-    noInfo: true,
+    noInfo: false,
     overlay: true,
-    compress: true,
+    compress: false,
     historyApiFallback: {
       index: url.parse(options.dev ? "/assets/" : publicPath).pathname,
     },
     contentBase: path.resolve("./src/assets"),
     watchContentBase: true,
   },
-  optimization: {
-    minimize: true,
-  },
+  // optimization: {
+  //   minimize: true,
+  // },
   node: {
     fs: "empty",
   },

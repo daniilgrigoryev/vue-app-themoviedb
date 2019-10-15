@@ -1,12 +1,14 @@
 <template>
   <div id="app">
-    <CategoryList></CategoryList>
+    <Layout></Layout>
+
+    <!-- <CategoryList></CategoryList> -->
     <!-- <router-view></router-view> -->
   </div>
 </template>
 
 <script>
-import CategoryList from "./components/CategoryList"
+import Layout from "./components/Layout"
 
 export default {
   name: "app",
@@ -14,7 +16,7 @@ export default {
     return {}
   },
   components: {
-    CategoryList,
+    Layout,
   },
 }
 </script>
