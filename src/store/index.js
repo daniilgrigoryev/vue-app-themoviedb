@@ -12,6 +12,8 @@ export const store = new Vuex.Store({
   state: {
     genres: [],
     movies: [],
+    movie: [],
+    trailer: [],
   },
   strict: true,
 })

@@ -4,7 +4,7 @@
       v-for="(genre, index) in allGenres"
       :key="index"
       :label="genre.name"
-      :value="genre.name"
+      :value="genre.id"
     ></el-option>
   </el-select>
 </template>

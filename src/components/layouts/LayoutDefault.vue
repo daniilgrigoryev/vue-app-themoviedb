@@ -2,23 +2,21 @@
   <section class="wrapper">
     <Header></Header>
     <section id="main">
-      <Movies></Movies>
+      <slot />
     </section>
   </section>
 </template>
 
 <script>
-import Header from "./Header.vue"
-import Movies from "./Movies.vue"
+import Header from "../Header.vue"
 
 export default {
-  name: "Layout",
+  name: "LayoutDefault",
   data() {
     return {}
   },
   components: {
     Header,
-    Movies,
   },
 }
 </script>

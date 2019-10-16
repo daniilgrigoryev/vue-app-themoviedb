@@ -1,11 +1,14 @@
 <template>
-  <div class="container">
+  <div class="container" :key="$route.path">
     <div class="card" v-for="movie in allMovies" :key="movie.id">
-      <div class="img">
-        <img :src="img(movie.poster_path)" alt />
-      </div>
+      <router-link :to="`/movie/${movie.id}`">
+        <div class="img">
+          <img :src="img(movie.poster_path)" alt />
+        </div>
+      </router-link>
+
       <div class="content">
-        <el-rate :max="10" v-model="movie.vote_average" show-score text-color="#ff9900"></el-rate>
+        <el-rate :max="10" disabled v-model="movie.vote_average" show-score text-color="#ff9900"></el-rate>
       </div>
     </div>
   </div>
@@ -26,7 +29,10 @@ export default {
     },
   },
   created() {
-    this.$store.dispatch("GET_MOVIES")
+    this.$store.dispatch("GET_MOVIES", {
+      type: this.$route.params.type,
+      id: this.$route.params.id,
+    })
   },
   methods: {
     img: function(data) {

@@ -2,11 +2,11 @@
   <header class="header">
     <div class="wrapper">
       <div class="container">
-        <a href="#" class="logo">
+        <a href="/" class="logo">
           <div class="img"></div>
           <span class="txt">Movie Loader</span>
         </a>
-        <GenreSelect></GenreSelect>
+        <!-- <GenreSelect></GenreSelect> -->
       </div>
     </div>
   </header>
@@ -26,7 +26,7 @@ export default {
 }
 </script>
 
-<style>
+<style scoped>
 .container {
   display: flex;
   justify-content: space-between;
