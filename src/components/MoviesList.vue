@@ -1,6 +1,6 @@
 <template>
-  <div class="container" :key="$route.path">
-    <div class="card" v-for="movie in allMovies" :key="movie.id">
+  <div class="container">
+    <div class="card" v-for="(movie, index) in allMovies" :key="index">
       <router-link :to="`/movie/${movie.id}`">
         <div class="img">
           <img :src="img(movie.poster_path)" alt />
