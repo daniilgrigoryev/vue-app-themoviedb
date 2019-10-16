@@ -15,10 +15,10 @@ export default {
     })
   },
   GET_MOVIES({ commit }, data) {
-    if (data.type == "genre") {
+    if (data.id) {
       axios
         .get(
-          `${API_URL}genre/${data.id}/movies?page=${data.page}?api_key=${API_KEY}`
+          `${API_URL}discover/movie?api_key=${API_KEY}&with_genres=${data.id}`
         )
         .then(res => {
           if (res.status === 200) {

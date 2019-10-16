@@ -31,13 +31,18 @@ export default {
     },
   },
   created() {
-    this.$store.dispatch("GET_MOVIES", {
-      type: this.$route.params.type,
-      id: this.$route.params.id,
-      page: this.currentPage,
-    })
+    this.changeRoute()
+  },
+  watch: {
+    $route: "changeRoute",
   },
   methods: {
+    changeRoute: function() {
+      this.$store.dispatch("GET_MOVIES", {
+        id: this.$route.params.genres || 16,
+      })
+      // $store.commit("SET_MOVIES")
+    },
     img: function(data) {
       if (data) {
         return `${API_IMAGES}t/p/w300${data}`

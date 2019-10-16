@@ -16,6 +16,7 @@ export default {
   },
   SET_MOVIES(state, movies) {
     // eslint-disable-next-line no-param-reassign
-    state.movies = state.movies.concat(movies.results)
+    state.movies = movies.results
+    // state.movies = state.movies.concat()
   },
 }

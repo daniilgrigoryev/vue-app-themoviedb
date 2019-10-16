@@ -1,12 +1,15 @@
 <template>
-  <el-select v-model="value" placeholder="31" :change="onChangeSelect()">
-    <el-option
-      v-for="(genre, index) in allGenres"
-      :key="index"
-      :label="genre.name"
-      :value="{id: genre.id, name: genre.name}"
-    ></el-option>
-  </el-select>
+  <el-dropdown>
+    <span class="el-dropdown-link">
+      Жанры
+      <i class="el-icon-arrow-down el-icon--right"></i>
+    </span>
+    <el-dropdown-menu slot="dropdown">
+      <el-dropdown-item v-for="(genre, index) in allGenres" :key="index">
+        <router-link :to="`/movies/${genre.id}`">{{genre.name}}</router-link>
+      </el-dropdown-item>
+    </el-dropdown-menu>
+  </el-dropdown>
 </template>
 
 
@@ -15,8 +18,7 @@ export default {
   name: "GenreSelect",
   data() {
     return {
-      value: {},
-      currentPage: 1,
+      value: 16,
     }
   },
   computed: {
@@ -25,14 +27,7 @@ export default {
     },
   },
   created() {
-    this.$store.dispatch("GET_GENRES")  
-  },
-  methods: {
-    onChangeSelect: function() {
-      // this.$router.push({
-      //   path: `/movies/${this.value.id}/genre/${this.value.name}`,
-      // })
-    },
+    this.$store.dispatch("GET_GENRES")
   },
 }
 </script>
@@ -40,5 +35,18 @@ export default {
 <style scoped>
 .genreSelect input.el-input__inner {
   border: 1px solid #409eff !important;
+}
+.el-dropdown-link {
+  cursor: pointer;
+  color: #409eff;
+}
+.el-icon-arrow-down {
+  font-size: 12px;
+}
+.demonstration {
+  display: block;
+  color: #8492a6;
+  font-size: 14px;
+  margin-bottom: 20px;
 }
 </style>

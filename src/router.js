@@ -23,13 +23,9 @@ const router = new VueRouter({
     },
     {
       name: "Movies",
-      path: "/movies/:id/:type/:name",
+      path: "/movies/:genres",
       component: Movies,
-      props: route => ({
-        id: 10402,
-        type: "genre",
-        name: "Music",
-      }),
+      props: true,
     },
     {
       name: "Movie",
