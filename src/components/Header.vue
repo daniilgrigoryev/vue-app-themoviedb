@@ -6,7 +6,7 @@
           <div class="img"></div>
           <span class="txt">Movie Loader</span>
         </a>
-        <!-- <GenreSelect></GenreSelect> -->
+        <GenreSelect></GenreSelect>
       </div>
     </div>
   </header>

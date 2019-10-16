@@ -4,6 +4,7 @@ import VueRouter from "vue-router"
 import PageNotFound from "./components/pages/404.vue"
 import Main from "./components/pages/Main.vue"
 import Movie from "./components/pages/Movie.vue"
+import Movies from "./components/pages/Movies.vue"
 
 Vue.use(VueRouter)
 
@@ -19,6 +20,16 @@ const router = new VueRouter({
       path: "*",
       name: "PageNotFound",
       component: PageNotFound,
+    },
+    {
+      name: "Movies",
+      path: "/movies/:id/:type/:name",
+      component: Movies,
+      props: route => ({
+        id: 10402,
+        type: "genre",
+        name: "Music",
+      }),
     },
     {
       name: "Movie",

@@ -1,10 +1,10 @@
 <template>
-  <el-select v-model="value" placeholder="жанры" class="genreSelect">
+  <el-select v-model="value" placeholder="31" :change="onChangeSelect()">
     <el-option
       v-for="(genre, index) in allGenres"
       :key="index"
       :label="genre.name"
-      :value="genre.id"
+      :value="{id: genre.id, name: genre.name}"
     ></el-option>
   </el-select>
 </template>
@@ -14,7 +14,10 @@
 export default {
   name: "GenreSelect",
   data() {
-    return {}
+    return {
+      value: {},
+      currentPage: 1,
+    }
   },
   computed: {
     allGenres() {
@@ -22,7 +25,14 @@ export default {
     },
   },
   created() {
-    this.$store.dispatch("GET_GENRES")
+    this.$store.dispatch("GET_GENRES")  
+  },
+  methods: {
+    onChangeSelect: function() {
+      // this.$router.push({
+      //   path: `/movies/${this.value.id}/genre/${this.value.name}`,
+      // })
+    },
   },
 }
 </script>

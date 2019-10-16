@@ -21,7 +21,9 @@ const API_IMAGES = process.env.API_IMAGES
 export default {
   name: "Movies",
   data() {
-    return {}
+    return {
+      currentPage: 1,
+    }
   },
   computed: {
     allMovies() {
@@ -32,6 +34,7 @@ export default {
     this.$store.dispatch("GET_MOVIES", {
       type: this.$route.params.type,
       id: this.$route.params.id,
+      page: this.currentPage,
     })
   },
   methods: {
